@@ -14,6 +14,7 @@ var club = require('./route/club.route');
 var addClub = require('./route/addclub.routes');
 
 app.use('/', club);
+app.use('/', addClub);
 
 app.set('port', (process.env.PORT || 3000)); 
 

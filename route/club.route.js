@@ -16,7 +16,7 @@ router.route('/')
   });
 
 
-// router.route('/users/clubs')
+router.route('/users/clubs')
 
 
 // .post(function(req, res){
@@ -39,16 +39,16 @@ router.route('/')
 // })
 
 
-//  .get(function(req, res){
+ .get(function(req, res){
 
-//   Club.find(function(err, all_club){
+  Club.find(function(err, all_club){
 
-//     if(err){
-//       res.send(err);
-//     }
-//     res.json(all_club);
-//   });
-// });
+    if(err){
+      res.send(err);
+    }
+    res.json(all_club);
+  });
+});
   //removes the -v and _id that comes by default when a gift is created
 //   Gift.find({}, 'name description price -_id', function (err, all_gift) {
 //      if(err){
@@ -60,19 +60,19 @@ router.route('/')
 
 // on routes that end in /gifts/:gifts_id
 // ----------------------------------------------------
-// router.route('/users/clubs/:clubs_id')
+router.route('/users/clubs/:clubs_id')
 
 
-// .get(function(req, res){
+.get(function(req, res){
  
-//   Club.findById(req.params.clubs_id, function(err, sin_club) {
+  Club.findById(req.params.clubs_id, function(err, sin_club) {
 
-//     if(err){
-//       res.send(err);
-//     }
-//     res.json(sin_club);
-//   });
-// })
+    if(err){
+      res.send(err);
+    }
+    res.json(sin_club);
+  });
+})
 
 
 
