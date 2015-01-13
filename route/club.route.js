@@ -19,24 +19,26 @@ router.route('/')
 router.route('/users/clubs')
 
 
-// .post(function(req, res){
-//     console.log(req.body);
-//     var club = new Club ({
-//         name: req.body.name,
-//         facilities: req.body.facilities,
-//         address: req.body.address,
-//         rating: req.body.rating
-//       });
+.post(function(req, res){
+    console.log(req.body);
+    var club = new Club ({
+        name: req.body.name,
+        facilities: req.body.facilities,
+        address: req.body.address,
+        rating: req.body.rating,
+        coords: req.body.coords,
+        timeOfOpening: req.body.timeOfOpening
+      });
 
  
-//   club.save(function(err){
+  club.save(function(err){
 
-//     if (err){
-//       res.send(err);
-//     }
-//     res.json(club);
-//   });
-// })
+    if (err){
+      res.send(err);
+    }
+    res.json(club);
+  });
+})
 
 
  .get(function(req, res){
@@ -76,22 +78,22 @@ router.route('/users/clubs/:clubs_id')
 
 
 
-// .put(function(req, res){
-//   Club.findById(req.params.clubs_id, function(err, sin_club) {
-//       sin_club.name= req.body.name;                
-//       sin_club.facilities= req.body.facilities;  
-//       sin_club.address= req.body.address; 
-//       sin_club.rating= req.body.address; 
+.put(function(req, res){
+  Club.findById(req.params.clubs_id, function(err, sin_club) {
+      sin_club.name= req.body.name;                
+      sin_club.facilities= req.body.facilities;  
+      sin_club.address= req.body.address; 
+      sin_club.rating= req.body.address; 
 
 
-//     sin_club.save(function (err){
-//       if(err){
-//       res.send(err);
-//       }
-//       res.json(sin_club);
-//     });
-//   });
-// })
+    sin_club.save(function (err){
+      if(err){
+      res.send(err);
+      }
+      res.json(sin_club);
+    });
+  });
+})
 
 .delete(function(req, res) {
   Club.findById(req.params.clubs_id, function(err, sin_club){

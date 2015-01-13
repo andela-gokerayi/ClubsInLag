@@ -11,10 +11,10 @@ var allowCrossDomain = function(req, res, next) {
   app.use(allowCrossDomain);
 
 var club = require('./route/club.route');
-var addClub = require('./route/addclub.routes');
+// var addClub = require('./route/addclub.routes');
 
 app.use('/', club);
-app.use('/', addClub);
+// app.use('/', addClub);
 
 app.set('port', (process.env.PORT || 3000)); 
 

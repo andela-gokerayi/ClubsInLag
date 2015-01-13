@@ -33,8 +33,37 @@ var ClubSchema = new Schema({
   rating: {
     type: Number,
     required: false,
-    trim: true
-  }
+    default: 0,
+    min: 0, 
+    max: 5
+  },
+
+  coords: {
+    type: [Number],
+    index: '2dsphere'
+  },
+
+  timeOfOpening: [{
+
+    days: {
+      type: String,
+      required: true
+    },
+    opening: String,
+    closing: String,
+    closed: false
+},
+
+{
+    days: {
+      type: String,
+      required: true
+    },
+
+    opening: String,
+    closing: String,
+    closed: false
+}]
 
 }); 
 
