@@ -76,8 +76,6 @@ router.route('/users/clubs/:clubs_id')
   });
 })
 
-
-
 .put(function(req, res){
   Club.findById(req.params.clubs_id, function(err, sin_club) {
       sin_club.name= req.body.name;                

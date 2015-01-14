@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/myapp');
+mongoose.connect('mongodb://gokerayi:pastor01@ds031631.mongolab.com:31631/clubinlag');
 
 
 var db = mongoose.connection;
@@ -38,12 +38,13 @@ var ClubSchema = new Schema({
     max: 5
   },
 
-  coords: {
-    type: [Number],
-    index: '2dsphere'
-  },
+  // coords: {
+  //   type: [Number],
+  //   index: '2dsphere'
+  // },
 
-  timeOfOpening: [{
+  timeOfOpening: [
+  {
 
     days: {
       type: String,
@@ -52,20 +53,20 @@ var ClubSchema = new Schema({
     opening: String,
     closing: String,
     closed: false
-},
+}
 
-{
-    days: {
-      type: String,
-      required: true
-    },
+// {
+//     days: {
+//       type: String,
+//       required: true
+//     },
 
-    opening: String,
-    closing: String,
-    closed: false
-}]
+//     opening: String,
+//     closing: String,
+//     closed: false
+// }
+]
 
 }); 
 
-var ClubModel = mongoose.model('ClubModel', ClubSchema);
-module.exports = ClubModel;
+module.exports = mongoose.model('Club', ClubSchema);
