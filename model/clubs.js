@@ -6,13 +6,13 @@ mongoose.connect('mongodb://gokerayi:pastor01@ds031631.mongolab.com:31631/clubin
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
-  console.log('...connected')
+  console.log('...connected');
 });
 
 var Schema = mongoose.Schema;
 
 var ClubSchema = new Schema({
-	name: {
+  name: {
     type: String,
     required: true,
     trim: true
@@ -43,29 +43,10 @@ var ClubSchema = new Schema({
   //   index: '2dsphere'
   // },
 
-  timeOfOpening: [
-  {
-
-    days: {
-      type: String,
-      required: true
-    },
-    opening: String,
-    closing: String,
-    closed: false
-}
-
-// {
-//     days: {
-//       type: String,
-//       required: true
-//     },
-
-//     opening: String,
-//     closing: String,
-//     closed: false
-// }
-]
+  timeOfOpening: {
+    type: String,
+    required: true
+  }
 
 }); 
 

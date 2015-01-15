@@ -26,11 +26,10 @@ router.route('/users/clubs')
         facilities: req.body.facilities,
         address: req.body.address,
         rating: req.body.rating,
-        coords: req.body.coords,
         timeOfOpening: req.body.timeOfOpening
       });
 
- 
+  // save the club and check for errors
   club.save(function(err){
 
     if (err){
@@ -42,7 +41,7 @@ router.route('/users/clubs')
 
 
  .get(function(req, res){
-
+    // console.log(Club);
   Club.find(function(err, all_club){
 
     if(err){
@@ -81,8 +80,8 @@ router.route('/users/clubs/:clubs_id')
       sin_club.name= req.body.name;                
       sin_club.facilities= req.body.facilities;  
       sin_club.address= req.body.address; 
-      sin_club.rating= req.body.address; 
-
+      sin_club.rating= req.body.address;
+      sin_club.timeOfOpening= req.body.timeOfOpening; 
 
     sin_club.save(function (err){
       if(err){
