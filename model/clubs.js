@@ -19,7 +19,7 @@ var ClubSchema = new Schema({
   },
 
   facilities: {
-    type: [String],
+    type: String,
     required: true,
     trim: true
   },
